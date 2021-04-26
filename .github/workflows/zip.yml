@@ -4,13 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Zip Release
-      # You may pin to the exact commit or the version.
-      # uses: TheDoctor0/zip-release@a1afcab9c664c9976ac398fa831eac67bed1eb0e
-      uses: TheDoctor0/zip-release@0.4.1
+    - uses: actions/checkout@master
+    - name: Archive Release
+    - uses: thedoctor0/zip-release@master
       with:
-        # Filename for archive
-        filename: MoobaPack#{tag}.zip
-        # Base path for archive files
-        path: /
+        filename: 'release.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
