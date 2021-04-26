@@ -12,13 +12,21 @@ jobs:
           dest: /release.zip
       - run: |
           ls ${{ github.workspace }}
-      - name: Upload asset to release
-        uses: gacts/upload-to-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          file: './release.zip'
-  #uploadAsset:
+      #- name: Upload asset to release
+      #  uses: gacts/upload-to-release@master
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     #   with:
+     #     file: './release.zip'
+  uploadAsset:
+    needs: zip-files
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Guerra24/upload-to-release@v1
+      with:
+          name: release.zip
+          path: /home/runner/work/MoobaPack/MoobaPack
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
    # needs: zip-files
     #runs-on: ubuntu-latest
     #steps:
