@@ -19,6 +19,6 @@ jobs:
       - uses: Shopify/upload-to-release@v1
         with:
           name: release.zip
-          path: build/a.out
+          path: /home/runner/work/MoobaPack/MoobaPack
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           content-type: zip
