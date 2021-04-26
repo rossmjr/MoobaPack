@@ -14,8 +14,6 @@ jobs:
           ls ${{ github.workspace }}
       - name: Upload asset to release
         uses: gacts/upload-to-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           file: './release.zip'
   #uploadAsset:
