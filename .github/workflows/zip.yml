@@ -4,6 +4,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+
+    - name: Private actions checkout
+      uses: daspn/private-actions-checkout@v2
+      with:
+        actions_list: '["thedoctor0/zip-release@master"]'
+        checkout_base_path: ./.github/actions
+
+    - name: Validation
+      run: |
+        ls -lR ./.github/actions
     - uses: actions/checkout@master
     - name: Archive Release
       uses: thedoctor0/zip-release@master
