@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Archive Release
-      uses: rossmjr/MoobaPack@master
+      uses: thedoctor0/zip-release@master
       with:
-        filename: 'moobaPackv3.zip'
+        filename: 'MoobaPack${tag}.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
