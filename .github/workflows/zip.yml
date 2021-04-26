@@ -12,22 +12,29 @@ jobs:
           dest: /release.zip
       - run: |
           ls ${{ github.workspace }}
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: rossmjr
+          author_email: mattross87@gmail.com
+          message: 'commit release'
+          add: '*.zip'
       #- name: Upload asset to release
       #  uses: gacts/upload-to-release@master
       #  env:
       #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      #   with:
      #     file: './release.zip'
-  uploadAsset:
-    needs: zip-files
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Shopify/upload-to-release@v1.0.1
-        with:
-          name: release.zip
-          path: /home/runner/work/MoobaPack/MoobaPack
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          content-type: zip
+  #uploadAsset:
+   # needs: zip-files
+    #runs-on: ubuntu-latest
+    #steps:
+     # - uses: Shopify/upload-to-release@v1.0.1
+      #  with:
+       #   name: release.zip
+        #  path: /home/runner/work/MoobaPack/MoobaPack
+         # repo-token: ${{ secrets.GITHUB_TOKEN }}
+          #content-type: zip
 #needs: zip-files
  #   runs-on: ubuntu-latest
   #  steps:
