@@ -1,0 +1,12 @@
+name: Create Archive
+on: [release]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: rossmjr/MoobaPack@master
+      with:
+        filename: 'moobaPackv3.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
