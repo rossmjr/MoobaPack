@@ -16,9 +16,9 @@ jobs:
     needs: zip-files
     runs-on: ubuntu-latest
     steps:
-      - uses: PeerXu/upload-asset@v1
+      - uses: Shopify/upload-to-release@v1
         with:
-          file: /home/runner/work/MoobaPack/MoobaPack/release.zip
-          suffix: .zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: release.zip
+          path: build/a.out
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          content-type: zip
