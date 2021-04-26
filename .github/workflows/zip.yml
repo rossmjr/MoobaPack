@@ -35,4 +35,4 @@ jobs:
     #  with:
      #     name: release.zip
       #    path: /home/runner/work/MoobaPack/MoobaPack
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+         # repo-token: ${{ secrets.GITHUB_TOKEN }}
