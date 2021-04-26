@@ -11,6 +11,7 @@ jobs:
           files: /Chars /Maps
           dest: ./release.zip
   uploadAsset:
+    needs: zip-files
     runs-on: ubuntu-latest
     steps:
       - uses: PeerXu/upload-asset@v1
