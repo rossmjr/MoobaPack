@@ -22,7 +22,7 @@ jobs:
     needs: zip-files
     runs-on: ubuntu-latest
     steps:
-      - uses: Shopify/upload-to-release@master
+      - uses: Shopify/upload-to-release@v1.0.1
         with:
           name: release.zip
           path: /home/runner/work/MoobaPack/MoobaPack
