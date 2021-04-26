@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: PeerXu/upload-asset@v1
         with:
-          file: /release.zip
+          file: /home/runner/work/MoobaPack/MoobaPack/release.zip
           suffix: .zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
